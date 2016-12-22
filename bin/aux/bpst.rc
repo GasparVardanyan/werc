@@ -1,4 +1,4 @@
-#!/usr/bin/env rc
+#!/bin/rc
 
 path=( $PLAN9/bin  $path )
 base=.

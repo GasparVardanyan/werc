@@ -1,4 +1,4 @@
-#!/usr/bin/env rc
+#!/bin/rc
 # DEPRECATED: sitemap.tpl now generates and updates a sitemap.txt when requested, and is also more smart than this simplistic script.
 
 for(d in sites/*/) {

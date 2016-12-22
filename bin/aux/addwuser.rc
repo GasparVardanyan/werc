@@ -1,4 +1,4 @@
-#!/usr/bin/env rc
+#!/bin/rc
 
 if(! ~ $#werc_root 0)
     cd $werc_root

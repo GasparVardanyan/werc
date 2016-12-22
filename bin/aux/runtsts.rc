@@ -1,4 +1,4 @@
-#!/usr/bin/env rc
+#!/bin/rc
 
 tstdom='http://test.cat-v.org'
 
