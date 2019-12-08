@@ -52,20 +52,18 @@ used.
 Source
 ------
 
-To get a copy of the latest stable code using mercurial, do:
+To get a copy of the latest development code using mercurial, do:
 
-	hg clone http://hg.cat-v.org/werc/
+	hg clone https://code.9front.org/hg/werc/
 
-You can also [browse the online repository](http://gsoc.cat-v.org/hg/werc/).
-
-The latest development branch is located at http://gsoc.cat-v.org/hg/werc-dev/
+You can also [browse the online repository](https://code.9front.org/hg/werc/).
 
 
 Contact
 -------
 
-For questions, suggestions, bugrepports and contributing patches you can join
-the [werc9 mailinglist](http://groups.google.com/group/werc9).
+For questions, suggestions, bug reports and contributing patches you can join
+the werc mailing list. To join, send a message with a body consisting only of the word _subscribe_ to werc-owner@cat-v.org. After you get the confirmation notice, you can post by sending messages to werc@cat-v.org.
 
 On irc, join [#cat-v](irc://irc.freenode.org/cat-v) on irc.freenode.org
 
