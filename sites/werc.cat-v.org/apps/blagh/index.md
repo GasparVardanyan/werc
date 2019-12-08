@@ -44,9 +44,9 @@ This is optional and by default set to the 'blog-editors' group.
 
 This option may be added using the patch linked bellow.  It defaults to `7` which **should** only include the page heading and the first two paragraphs of each post on the main blogroll(?) page.  This makes many assumptions that should be noted.  It just removes everything from `conf_max_lines_per_post` to the end of the file.  Traditionally, line 1 is the H1 title and line 2 is the line of = required to tell mardown of it's importance.  This then assumes that each paragraph is on a single line, which is not enforced by markdown.  See it in action at <http://blog.senet.us>
 
-[blagh-91a4597480a7-conf\_max\_lines\_per\_post.diff](http://senet.us/blagh-91a4597480a7-conf_max_lines_per_post.diff) (1.2K) (20100114)
+[blagh-91a4597480a7-conf\_max\_lines\_per\_post.diff](https://gist.github.com/anjandev/c517e79042148c136b98334867c545d8) (1.2K) (20100114)
 
-**Author**: J Thigpen (cdarwin) <darwin@senet.us>
+**Author:** A Momi <anjan@momi.ca>
 
 See also:
 
