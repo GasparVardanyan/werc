@@ -120,10 +120,8 @@ fn get_file_title {
     }
 }
 
-fn datei { datet | sed 's/T.*$//' }
-
-fn datet {
-	date=`{read}
+fn ndate {
+	date=`{date}
 	switch($date(2)){
 	case Jan;	mo=01
 	case Feb;	mo=02
@@ -352,7 +350,14 @@ fn datet {
 	case YEKT;	tz=+0500
 	case Z;	tz=+0000
 	}
-	echo $date(6)^-$mo-$da^T^$date(4)^$tz
+	switch($1){
+	case -i
+		echo $date(6)^-$mo-$da
+	case -m
+		echo $date(1)^, $da $date(2) $date(6) $date(4) $tz
+	case -t
+		echo $date(6)^-$mo-$da^T^$date(4)^$tz
+	}
 }
 
 ##########################################################################
