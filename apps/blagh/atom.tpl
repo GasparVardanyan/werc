@@ -5,18 +5,16 @@
 fn statpost {
     f = $1
 
-    updated = `{datet `{mtime $f | awk '{print $1}'}}
+    updated = `{date -t `{mtime $f | awk '{print $1}'}}	# wtf doesn't this validate?
     post_uri=$base_url^`{cleanname `{echo $f | sed -e 's!^'$sitedir'!!'}}^'/'
     title=`{read $f/index.md}
-    # Not used: date=`{/bin/date -Rd `{basename $f |sed 's/(^[0-9\-]*).*/\1/; s/-[0-9]$//'}}
-    # TODO: use mtime(1) and ls(1) instead of lunix's stat(1)
     #stat=`{stat -c '%Y %U' $f}
     #mdate=`{/bin/date -Rd `{mtime $f|awk '{print $1}' }} # Not used because it is unreliable
     by=`{ls -m $f | sed 's/^\[//g; s/].*$//g' >[2]/dev/null}
     #ifs=() { summary=`{cat $f/index.md | crop_text 1024 ... | $formatter } }
     ifs=() { summary=`{cat $f/index.md | strip_title_from_md_file | ifs=$difs {$formatter} } }
 }
-updated = `{datet}
+updated = `{ndate -t}
 %}
 
 <feed xmlns="http://www.w3.org/2005/Atom"
@@ -33,7 +31,6 @@ updated = `{datet}
     <title><![CDATA[%($siteTitle%)]]></title>
     <subtitle><![CDATA[%($siteSubTitle%)]]></subtitle>
 
-% # <updated>2008-09-24T12:47:00-04:00</updated>
     <updated>%($updated%)</updated>
     <link href="."/>
 
@@ -49,9 +46,9 @@ updated = `{datet}
         <author><name><![CDATA[%($by%)]]></name></author>
 
 
-        <content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
-            <![CDATA[%($summary%)]]>
-        </div></content>
+        <content type="html">
+            %($summary%)
+        </content>
 
         <updated>%($updated%)</updated>
     </entry>
