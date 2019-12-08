@@ -81,6 +81,7 @@ fn wman_out_filter {
 fn wman_default_out_filter {
 	# col -x syntax is the same for UNIX and Plan 9.
     escape_html \
+    | ssam 'x/[a-z]+-\n[ ]+[a-z]+\([0-9]\)/s/\n[ ]+//' \
     | sed 's!([\.\-a-zA-Z0-9]+)\(('^`{echo $wman_cat_list|tr ' ' '|'}^')\)!<a href="../\2/\1">&</a>!g' \
     | awk '/^$/ {if(n != 1) print; n=1; next} /./ {n=0; print}' \
     | col -x
