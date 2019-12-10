@@ -23,7 +23,7 @@ fn statpost {
 %{
         # <webMaster>uriel99+rss@gmail.com (Uriel)</webMaster>
 	# rfc822 last time channel content changed.
-	lbd=`{ndate -m `{date `{mtime `{ls $blagh_root$blagh_dirs | grep -e '[0-9][0-9][0-9][0-9]' | tail -1} | awk '{print $1}'}}}
+	lbd=`{ndate -m `{date `{mtime `{ls $blagh_root$blagh_dirs | grep -e '^'$blagh_root$blagh_dirs'\/[0-9][0-9][0-9][0-9]$' | tail -1} | awk '{print $1}'}}}
 	echo '<lastBuildDate>'$"lbd'</lastBuildDate>'
 	# rfc822 publication date for content in the channel.
 	pubdate=`{ndate -m}
