@@ -11,7 +11,7 @@ fn statpost {
     ifs=() { summary=`{cat $f/index.md | strip_title_from_md_file | ifs=$difs {$formatter} } }
 }
 # rfc3339 date when feed was last updated.
-fupdated = `{ndate -a `{date `{mtime `{ls $blagh_root$blagh_dirs | grep -e '^'$blagh_root$blagh_dirs'\/[0-9][0-9][0-9][0-9]$' | tail -1} | awk '{print $1}'}}}
+fupdated = `{ndate -a `{date `{mtime `{ls $blagh_root$blagh_dirs/[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9]/[0-9] | tail -1} | awk '{print $1}'}}}
 %}
 
 <feed xmlns="http://www.w3.org/2005/Atom"
