@@ -5,16 +5,13 @@
 fn statpost {
     f = $1
 
-    updated = `{date -t `{mtime $f | awk '{print $1}'}}	# wtf doesn't this validate?
     post_uri=$base_url^`{cleanname `{echo $f | sed -e 's!^'$sitedir'!!'}}^'/'
     title=`{read $f/index.md}
-    #stat=`{stat -c '%Y %U' $f}
-    #mdate=`{/bin/date -Rd `{mtime $f|awk '{print $1}' }} # Not used because it is unreliable
     by=`{ls -m $f | sed 's/^\[//g; s/].*$//g' >[2]/dev/null}
-    #ifs=() { summary=`{cat $f/index.md | crop_text 1024 ... | $formatter } }
     ifs=() { summary=`{cat $f/index.md | strip_title_from_md_file | ifs=$difs {$formatter} } }
 }
-updated = `{ndate -t}
+# rfc3339 date when feed was last updated.
+fupdated = `{ndate -t `{date `{mtime `{ls $blagh_root$blagh_dirs | grep -e '^'$blagh_root$blagh_dirs'\/[0-9][0-9][0-9][0-9]$' | tail -1} | awk '{print $1}'}}}
 %}
 
 <feed xmlns="http://www.w3.org/2005/Atom"
@@ -31,7 +28,7 @@ updated = `{ndate -t}
     <title><![CDATA[%($siteTitle%)]]></title>
     <subtitle><![CDATA[%($siteSubTitle%)]]></subtitle>
 
-    <updated>%($updated%)</updated>
+    <updated>%($fupdated%)</updated>
     <link href="."/>
 
 % for(f in `{get_post_list $blagh_root$blagh_dirs}) {
@@ -45,12 +42,13 @@ updated = `{ndate -t}
 % # <link rel="replies" href="2899.atom" thr:count="0"/>
         <author><name><![CDATA[%($by%)]]></name></author>
 
+        <content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
+            <![CDATA[%($summary%)]]>
+        </div></content>
 
-        <content type="html">
-            %($summary%)
-        </content>
-
-        <updated>%($updated%)</updated>
+% # rfc3339 date when entry was last updated.
+% eupdated=`{ndate -t `{date `{mtime $f | awk '{print $1}'}}}
+        <updated>%($eupdated%)</updated>
     </entry>
 
 % }
