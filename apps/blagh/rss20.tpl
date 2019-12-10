@@ -22,10 +22,10 @@ fn statpost {
         <generator><![CDATA[Tom Duff's rc, and Kris Maglione's clever hackery]]></generator>
 %{
         # <webMaster>uriel99+rss@gmail.com (Uriel)</webMaster>
-	# rfc822 last time channel content changed.
+	# rfc2822 last time channel content changed.
 	lbd=`{ndate -m `{date `{mtime `{ls $blagh_root$blagh_dirs | grep -e '^'$blagh_root$blagh_dirs'\/[0-9][0-9][0-9][0-9]$' | tail -1} | awk '{print $1}'}}}
 	echo '<lastBuildDate>'$"lbd'</lastBuildDate>'
-	# rfc822 publication date for content in the channel.
+	# rfc2822 publication date for content in the channel.
 	pubdate=`{ndate -m}
         for(f in `{get_post_list $blagh_root$blagh_dirs}){
             statpost $f
