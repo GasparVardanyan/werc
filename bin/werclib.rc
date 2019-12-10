@@ -121,7 +121,10 @@ fn get_file_title {
 }
 
 fn ndate {
-	date=`{date}
+	if(~ $#* 7)
+		date=$*(2-)
+	if not
+		date=`{date}
 	switch($date(2)){
 	case Jan;	mo=01
 	case Feb;	mo=02
