@@ -1,6 +1,7 @@
-<div class="left"><a href="http://werc.cat-v.org/">Powered by werc</a></div>
-<!-- TODO Maybe should add a programatically generated google search box -->
-<div class="right"><a href="/_users/login">User Login</a></div>
+<div><a href="http://werc.cat-v.org/">Powered by werc</a></div>
 
-<br>
-<br class="doNotDisplay doNotPrint">
+<div><a href="/_users/login">User Login</a>
+<!-- TODO: add duckduckgo site search
+<form action="/_search" method=get><input type=text name=q />
+-->
+</div>
