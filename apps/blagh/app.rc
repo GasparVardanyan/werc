@@ -37,13 +37,17 @@ fn blagh_init {
             u=$blagh_uri'index'
             extraHeaders=$"extraHeaders ^ \
 '<link rel="alternate" type="application/atom+xml" title="ATOM" href="'$"u'.atom" />
-<link rel="alternate" type="application/rss+xml" title="RSS" href="'$"u'.rss" />'
+<link rel="alternate" type="application/rss+xml" title="RSS" href="'$"u'.rss" />
+<link rel="alternate" type="application/json" title="JSON" href="'$"blagh_uri'feed.json" />'
         }
         if not if(~ $req_path $blagh_uri^index.atom)
             blagh_setup_feed_handlers atom.tpl 'application/atom+xml'
 
         if not if(~ $req_path $blagh_uri^index.rss)
             blagh_setup_feed_handlers rss20.tpl 'text/xml; charset=utf-8'
+
+				if not if(~ $req_path $blagh_uri^feed.json)
+            blagh_setup_feed_handlers jsonfeed.tpl 'application/json; charset=utf-8'
 
         if not if(~ $req_path $blagh_uri^new_post && ! ~ $#editor_mode 0) {
             handler_body_main=( tpl_handler `{get_lib_file blagh/new_post.tpl apps/blagh/new_post.tpl} )
