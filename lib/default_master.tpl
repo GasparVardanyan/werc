@@ -1,35 +1,26 @@
-<div id="header">
-    <div class="superHeader">
+<header>
+    <nav>
 % cat `{ get_lib_file top_bar.inc }
-    </div>
-
-    <div class="midHeader">
-    <h1 class="headerTitle"><a href="/">%($"siteTitle%) <span id="headerSubTitle">%($"siteSubTitle%)</span></a></h1>
-    </div>
-    
-    <div class="subHeader"><br></div>
-</div>
+    </nav>
+    <h1><a href="/">%($"siteTitle%) <span id="headerSubTitle">%($"siteSubTitle%)</span></a></h1>
+</header>
 
 % if(! ~ $#handlers_bar_left 0) {
-    <div id="side-bar">
+    <nav id="side-bar">
 %   for(h in $handlers_bar_left) {
         <div>
 %       run_handler $$h
         </div>
 %   }
-    </div>
+    </nav>
 % }
 
-<div id="main-copy">
-
+<article>
 % run_handlers $handlers_body_head
-
 % run_handler $handler_body_main
-
 % run_handlers $handlers_body_foot
+</article>
 
-</div>
-
-<div id="footer">
+<footer>
 % cat `{ get_lib_file footer.inc }
-</div>
+</footer>
