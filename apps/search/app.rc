@@ -1,0 +1,29 @@
+fn conf_enable_search {
+    enable_search=yes
+    conf_enable_app search
+		pageTitle='Site Search'
+}
+
+
+fn search_init {
+	get_post_args q
+	if (! ~ $#q 0) {
+		redirect_string = 'https://duckduckgo.com/?q=site:'$SERVER_NAME^'+'^$"q
+		http_redirect $redirect_string '302 Found'
+	}
+	if not {
+		handler_body_main='search_body'
+	}
+}
+
+fn search_body {
+    echo '
+<h1>Site search</h1>
+<h3>using DuckDuckGo</h3>
+<form action="/_search/" method="POST">
+<input type="text" name="q" placeholder="Search text...">
+<input type="submit" value="Search">
+</form>'
+
+}
+
