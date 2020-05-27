@@ -19,9 +19,10 @@ fn duckduckgo_init {
 fn duckduckgo_body {
     echo '
 <h1>Site search</h1>
-<h3>using DuckDuckGo</h3>
+<h2>using DuckDuckGo</h2>
 <form action="/_search/" method="POST">
-<input type="text" name="q" placeholder="Search text...">
+<label for="searchtext">Site search:</label> 
+<input type="text" id="searchtext" name="q" placeholder="Search text...">
 <input type="submit" value="Search">
 </form>'
 
