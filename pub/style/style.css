@@ -39,3 +39,9 @@ article a:hover { color:  rgb(100,135,220); }
 footer { color: white; background-color: rgb(100,135,220); }
 footer a { color: inherit; }
 footer div { padding: 1em; }
+
+/* tables */
+table { border: 1px solid rgba(128,128,128,0.5); padding: 0; }
+th { color: white; background-color: rgb(100,135,220); }
+tr:nth-child(odd) { background-color: rgba(128,128,128,0.1)  }
+
