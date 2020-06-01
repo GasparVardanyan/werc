@@ -5,7 +5,7 @@ that default, you could enable site search like so:
 mkdir -p /www/werc/sites/MYSITE/_search/_werc/
 echo 'conf_enable_duckduckgo' > /www/werc/sites/MYSITE/_search/_werc/config
 mkdir -p /www/werc/sites/MYSITE/_werc/lib/
-cp /www/werc/apps/search/footer.inc.sample /www/werc/sites/MYSITE/_werc/lib/
+cp /www/werc/apps/search/footer.inc.sample /www/werc/sites/MYSITE/_werc/lib/footer.inc
 
 Searches will POST to /_search/ and from there get redirected to Duck Duck 
 Go with a site:$SERVER_NAME prefix.  To have the search path URL be some-
