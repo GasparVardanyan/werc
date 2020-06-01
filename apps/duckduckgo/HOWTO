@@ -9,7 +9,7 @@ cp /www/werc/apps/search/footer.inc.sample /www/werc/sites/MYSITE/_werc/lib/
 
 Searches will POST to /_search/ and from there get redirected to Duck Duck 
 Go with a site:$SERVER_NAME prefix.  To have the search path URL be some-
-thing differen, you'll have to edit line 23 of app.rc to point to the new
+thing different, you'll have to edit line 23 of app.rc to point to the new
 path.
 
 TODO: make it automatically work no matter which directory the app is 
