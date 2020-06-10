@@ -33,8 +33,7 @@ fn wercpaste_init {
 }
 
 fn begforpaste {
-	echo '<h1>Pastebin</h1>
-	<article>
+	echo '<article class="pastebox">
 	<h3 style="text-align: center">pasted data is not publically indexed</h3>
 	<form action="'$paste_url'" method="post" style="margin:2em">
 	<textarea name="paste" cols="120" rows="20" required style="display: block; margin: 0 auto 0 auto" ></textarea><br>
@@ -44,4 +43,3 @@ fn begforpaste {
 	</article>
 	'
 }
-
