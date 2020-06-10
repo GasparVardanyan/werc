@@ -357,7 +357,7 @@ fn ndate {
 	case -a	# rfc3339
 		tz=`{echo $tz | sed 's/00$/:00/'}
 		echo $date(6)^-$mo-$da^T^$date(4)^$tz
-	case -i
+	case -i	# iso-8601 lite
 		echo $date(6)^-$mo-$da
 	case -m	# rfc2822
 		echo $date(1)^, $da $date(2) $date(6) $date(4) $tz
