@@ -17,7 +17,6 @@ dirclean=' s/\.(md|html|txt)$//; '
 # Careful, the proper p9p path might not be set until initrc.local is sourced
 path=(. /bin ./bin)
 
-headers=lib/headers.tpl
 res_tail='</body></html>'
 http_content_type='text/html'
 ll_add handlers_bar_left nav_tree
@@ -37,6 +36,7 @@ fn werc_exec_request {
     site=$SERVER_NAME
     base_url=http://$site:$SERVER_PORT
     sitedir=$sitesdir/$site
+    headers=`{get_lib_file headers.tpl}
     master_template=`{get_lib_file default_master.tpl}
     current_date_time=`{date}
 
