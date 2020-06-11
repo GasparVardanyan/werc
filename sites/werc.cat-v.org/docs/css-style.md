@@ -8,11 +8,8 @@ You can copy pub/style/style.css and customize it, or you can take a simpler fil
 Here is an example of how to set the main werc colors:
 
 
-	body { background-color: #FFFFF7; }
-	.midHeader { background-color: #FFFFE9; }
-	#side-bar { background-color: #EFFFEF; }
-	#side-bar a { color: black; }
-	#side-bar a:hover {
-	  color: white!important;
-	  background-color: #428a42;
-	}
+	header nav { background-color: rgb(100,135,220); color: white; }
+	header h1 { background-color: #ff6d06; color: black; }
+	body > nav > div { border-bottom: 1px solid #ddd; } 
+	body > nav > div a { color: rgb(0, 102, 204); } 
+	body > nav > div a:hover { color: white; background-color: rgb(100,135,220); }
