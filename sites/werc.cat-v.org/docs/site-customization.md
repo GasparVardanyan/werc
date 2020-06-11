@@ -41,6 +41,7 @@ Include:
 Templates:
 
 * default_master.tpl: This is the main template, which calls all the sidebar and other handlers and applications, usually you won't need to edit it unless you want to make changes to the layout or similar dramatic changes.
+* headers.tpl: Template for the default headers.
 * sitemap.tpl: Template for the sitemap page.
 * 404.tpl: Template for 'File Not Found' pages.
 
