@@ -6,7 +6,7 @@ You can also find a description of some basic config options in the `etc/initrc`
 General Setup Options
 --------------------
 
-* `formatter` - Command to use for document formatting (usually some form of markdown), should be able to take input both from file names passed as arguments or from stdin if no file names are provided. By default: `formatter=(fltr_cache markdown.pl)`
+* `formatter` - Command to use for document formatting (usually some form of markdown), should be able to take input both from file names passed as arguments or from stdin if no file names are provided. By default: `formatter=(fltr_cache md2html.awk)`
 
 
 Titles and Metadata
