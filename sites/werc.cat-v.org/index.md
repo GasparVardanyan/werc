@@ -66,13 +66,6 @@ the werc mailing list. To join, send a message with a body consisting only of th
 On irc, join [#cat-v](irc://irc.freenode.org/cat-v) on irc.freenode.org
 
 
-Links
------
-
-* [werc project at freshmeat](http://freshmeat.net/projects/werc/) - You can get new release notifications there.
-* [werc project at ohloh](https://www.ohloh.net/p/werc/)
-
-
 License
 -------
 
