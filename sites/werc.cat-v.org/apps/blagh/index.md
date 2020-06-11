@@ -7,7 +7,7 @@ Some features include:
 
 * File based, database free.
 * History browsing.
-* Atom and RSS feeds.
+* Atom, JSON, and RSS feeds.
 * Server-side feed 'aggregation' (merge multiple blogs into a single one).
 * Comments using [bridge](../bridge/)
 * Markdown formatting.
