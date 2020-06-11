@@ -34,15 +34,13 @@ Install Requirements
 All you need is some Plan 9 commands (cat, grep, sed, rc, etc.), and an HTTP
 server with CGI support.
 
-Werc runs on any Unix-like system where [Plan 9 from User Space](http://plan9.us)
-is available (this includes Linux, *BSD, OS X and Solaris), and on Plan 9.
-
-If you use Debian you can install the `9base` package that will provide all the
-required commands (but at the moment you need to install the version in *sid*,
-older versions in stable lack some of the required programs)
+Werc runs on any Unix-like system where [Plan 9 from User Space](https://9fans.github.io/plan9port/),
+[9base](https://tools.suckless.org/9base/),
+or [frontport](https://code.9front.org/hg/frontbase)
+are available (this includes Linux, *BSD, OS X and Solaris), and on Plan 9.
 
 Werc can use any HTTP server that can handle CGI, and has been tested with at
-least Apache, Lighttpd, Cherokee, nhttpd, Hiawatha, and others.
+least Apache, Lighttpd, Cherokee, nhttpd, Hiawatha, rc-httpd, cgd, and others.
 
 Werc uses markdown by default (and the standard Perl markdown is included with
 the distribution), to format documents, but any other formatting system can be
@@ -89,6 +87,8 @@ the MIT and ISC licenses.
 Credits
 -------
 
+Thanks to [Uriel](http://uriel.cat-v.org/) for creating werc.
+
 Thanks to Kris Maglione (aka JG) for implementing rss feeds, for writing the
 awk rc-templating system, and other help and inspiration (some parts of the
 code were based on JG's diri wiki).
@@ -98,5 +98,5 @@ Thanks to Mechiel (aka oksel) for the md_cache script.
 Thanks Garbeam (aka arg) for writing the original diri code and showing that
 writing complex web apps in rc was feasible.
 
-And thanks to everyone else whom I have forgotten and that has provided fixes
+And thanks to everyone else whom we may have forgotten and that has provided fixes
 and feedback.
