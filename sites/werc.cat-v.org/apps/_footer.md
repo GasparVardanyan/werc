@@ -8,3 +8,4 @@ This are some apps developed by werc users, to install them put them in your wer
 * [hgwerc](http://www.anarchyinthetubes.com/hg/hgwerc/): a wrapper around the mercurial web interface to integrate it into werc sites, also by yiyus.
 * [scrappydog](http://code.google.com/p/scrappydog/): A werc based online scrapbook by maht.
 * [flip](https://web.archive.org/web/20120330121431/http://www.anarchyinthetubes.com/hg/flip/): A web interface to view PDFs, by yiyus.
+* [barf](https://code.9front.org/hg/barf): blog, image, log, paste sites with pagination and tagging, by sl.
