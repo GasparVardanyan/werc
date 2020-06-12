@@ -16,11 +16,14 @@ Werc 1.5.x
 
 Planed major changes in 1.5
 
-* Include required p9p binaries in standard distribution (or with some easy to deploy packaging).
-* New/rewritten css layout, perhaps using fluid960gs? 
+* <strike>Include required p9p binaries in standard distribution (or with some easy to deploy packaging).</strike>
+* New/rewritten css layout, perhaps using <strike>fluid960gs?</strike> html5 flexbox 
 * File upload support [*Code contributed by maht, needs integration*]
 * OpenID support [*Code contributed by maht, also needs integration*]
-* More complete test suite.
+* More complete test suite. [*See: <http://tst.cat-v.org>*]
+* Integrate all changes from 9front live sites [*Done*]
+* Add rc-httpd [*Done*]
+* Add optional headers.tpl to site-specific templates in _werc/lib/ [*Done*]
 
 
 Werc 1.4.x, current stable branch
