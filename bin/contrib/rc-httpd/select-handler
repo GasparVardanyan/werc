@@ -2,7 +2,15 @@
 rfork n
 
 # Route requests to werc.
-# Change the werc path to match your system.
+# Change paths to match your system.
+
+if(~ $SERVER_NAME 9base.werc.cat-v.org)
+	PLAN9=/usr/local/9base
+if(~ $SERVER_NAME frontbase.werc.cat-v.org)
+	PLAN9=/usr/local/plan9front
+if(~ $SERVER_NAME plan9port.werc.cat-v.org)
+	PLAN9=/usr/local/plan9
+
 if(~ $SERVER_NAME *){
 	PATH_INFO=$location
 	FS_ROOT=/home/sl/www/werc/sites/$SERVER_NAME
