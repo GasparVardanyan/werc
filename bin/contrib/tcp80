@@ -1,4 +1,5 @@
 #!/bin/rc
 # For use with listen(8).
 # Change paths to match your system.
+PLAN9=/usr/local/plan9front
 exec /home/sl/www/werc/bin/contrib/rc-httpd/rc-httpd >>[2]/var/log/rc-httpd
