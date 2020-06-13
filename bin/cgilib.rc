@@ -29,9 +29,9 @@ fn load_post_args {
         ifs='&
 '       for(pair in `{cat}) {
             ifs='=' { pair=`{echo -n $pair} }
-            n='post_arg_'^`{echo $pair(1)|urldecode|tr -cd 'a-zA-Z0-9_'}
+            n='post_arg_'^`{echo $pair(1)|nurldecode|tr -cd 'a-zA-Z0-9_'}
             post_args=( $post_args $n )
-            ifs=() { $n=`{echo -n $pair(2)|urldecode|tr -d ''} }
+            ifs=() { $n=`{echo -n $pair(2)|nurldecode|tr -d ''} }
         }
         pair=()
     }
@@ -64,7 +64,7 @@ fn awk_buffer {
     END { printf "%s", buf }'
 }
 
-fn urldecode { $PLAN9/bin/urlencode -d || url_decode}	# GROSS
+fn nurldecode { urlencode -d || url_decode}	# GROSS
 
 fn url_decode {
 awk '
@@ -109,7 +109,7 @@ BEGIN {
 '
 }
 
-fn urlencode { $PLAN9/bin/urlencode $* || url_encode }	# GROSS
+fn nurlencode { urlencode || url_encode }	# GROSS
 
 fn url_encode {
     awk '
