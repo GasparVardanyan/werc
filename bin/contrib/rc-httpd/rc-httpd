@@ -24,7 +24,7 @@ fn terminate{
 	exit terminate
 }
 
-fn trim_input{ read -c $CONTENT_LENGTH }
+fn trim_input{ dd -bs 1 -count $CONTENT_LENGTH }
 
 request=`{getline}
 if(~ $#request 0)
