@@ -1,5 +1,5 @@
 #!/bin/rc
-full_path=`{echo $"FS_ROOT^$"PATH_INFO | urlencode -d}
+full_path=`{echo $"FS_ROOT^$"PATH_INFO | urldecode.awk}
 full_path=$"full_path
 if(~ $full_path */)
 	error 503
