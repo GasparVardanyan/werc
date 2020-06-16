@@ -13,17 +13,17 @@ Configuration
 
 First, create the search path and the _werc directory under it:
 
-; mkdir -p /www/werc/sites/MYSITE/_search/_werc/
+	mkdir -p /www/werc/sites/MYSITE/_search/_werc/
 
 Then, enable the duckduckgo app in that directory:
 
-echo 'conf_enable_duckduckgo' > /www/werc/sites/MYSITE/_search/_werc/config
+	echo 'conf_enable_duckduckgo' > /www/werc/sites/MYSITE/_search/_werc/config
 
 Next, deploy the search form somewhere on your site.  This example puts
 it in your footer:
 
-mkdir -p /www/werc/sites/MYSITE/_werc/lib/
-cp /www/werc/apps/search/footer.inc.sample /www/werc/sites/MYSITE/_werc/lib/footer.inc
+	mkdir -p /www/werc/sites/MYSITE/_werc/lib/
+	cp /www/werc/apps/search/footer.inc.sample /www/werc/sites/MYSITE/_werc/lib/footer.inc
 
 Demo
 ----
