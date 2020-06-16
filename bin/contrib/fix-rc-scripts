@@ -1,0 +1,27 @@
+#!/usr/local/plan9/bin/rc
+
+# Fix rc shell scripts to find rc without launching env every time.
+# Invoke with rc and plan9 versions of grep and ed in $PATH
+
+# If your system lacks which (e.g. some gnu/linux)
+# substitute the full path to rc in this line:
+rc=/usr/local/plan9/bin/rc
+firstline='#!'$"rc
+
+if(~ $#* 0)	files = *
+if not	files = $*
+
+myname = `{basename $0}
+
+for(file in $files) {
+	if(test -d $file) $0 $file/*
+	if not if(~ $file *$myname) {}
+	if not if(sed 1q $file | grep '^#!/.*[/	 ]rc$' > /dev/null) {
+		{
+			echo 1c
+			echo $firstline
+			echo .
+			echo wq
+		} | ed $file > /dev/null
+	}
+}
