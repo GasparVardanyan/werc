@@ -63,6 +63,8 @@ Contact
 For questions, suggestions, bug reports and contributing patches you can join
 the werc mailing list. To join, send a message with a body consisting only of the word _subscribe_ to werc-owner@cat-v.org. After you get the confirmation notice, you can post by sending messages to werc@cat-v.org.
 
+To track commit messages, you can join the werc-commits mailing list. To join, send a message with a body consisting only of the word _subscribe_ to werc-commits-owner@cat-v.org.
+
 On irc, join [#cat-v](irc://irc.freenode.org/cat-v) on irc.freenode.org
 
 
@@ -90,6 +92,8 @@ Thanks to Mechiel (aka oksel) for the md_cache script.
 
 Thanks Garbeam (aka arg) for writing the original diri code and showing that
 writing complex web apps in rc was feasible.
+
+Thanks to Ethan Gardner for writing rc-httpd.
 
 And thanks to everyone else whom we may have forgotten and that has provided fixes
 and feedback.
