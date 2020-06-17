@@ -37,7 +37,7 @@ server with CGI support.
 Werc runs on any Unix-like system where [Plan 9 from User Space](https://9fans.github.io/plan9port/),
 [9base](https://tools.suckless.org/9base/),
 or [frontport](https://code.9front.org/hg/frontbase)
-are available (this includes Linux, *BSD, OS X and Solaris), and on Plan 9.
+are available (this includes Linux, \*BSD, OS X and Solaris), and on Plan 9.
 
 Werc can use any HTTP server that can handle CGI, and has been tested with at
 least Apache, Lighttpd, Cherokee, nhttpd, Hiawatha, rc-httpd, cgd, and others.
