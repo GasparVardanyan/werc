@@ -11,29 +11,31 @@ enough and break backwards compatibility in some important way. For this the
 deprecated and currently outdated `werc-dev` mercurial repo will be used.
 
 
-Werc 1.5.x
+Werc 1.5.x, current stable branch
 ----------
 
-Planed major changes in 1.5
+Planned major changes in 1.5
 
 * <strike>Include required p9p binaries in standard distribution (or with some easy to deploy packaging).</strike>
-* New/rewritten css layout, perhaps using <strike>fluid960gs?</strike> html5 flexbox 
+* New/rewritten css layout, using html5 flexbox [*Done*]
 * File upload support [*Code contributed by maht, needs integration*]
 * OpenID support [*Code contributed by maht, also needs integration*]
 * More complete test suite. [*See: <http://tst.cat-v.org>*]
 * Integrate all changes from 9front live sites [*Done*]
 * Add rc-httpd [*Done*]
 * Add optional headers.tpl to site-specific templates in _werc/lib/ [*Done*]
+* Add apps/mdir [*Code contributed by khm, needs integration*]
+* Add apps/paste [*Code contributed by khm, rewrite to use apps/upload*]
 
 
-Werc 1.4.x, current stable branch
+Werc 1.4.x, previous stable branch
 ---------------------------------
 
 * Mostly bugfixes, documentation work, and minor improvements.
 
 
-Werc 1.2.x, previous stable branch
-----------------------------------
+Werc 1.2.x
+----------
 
 * Only security fixes.
 
