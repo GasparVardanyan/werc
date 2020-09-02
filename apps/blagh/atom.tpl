@@ -8,7 +8,8 @@ fn statpost {
     post_uri=$base_url^`{cleanname `{echo $f | sed -e 's!^'$sitedir'!!'}}^'/'
     title=`{read $f/index.md}
     by=`{ls -m $f | sed 's/^\[//g; s/].*$//g' >[2]/dev/null}
-    ifs=() { summary=`{cat $f/index.md | strip_title_from_md_file | ifs=$difs {$formatter} } }
+    #ifs=() { summary=`{cat $f/index.md | strip_title_from_md_file | ifs=$difs {$formatter} } }
+    summary=`{cat $f/index.md | strip_title_from_md_file | $formatter | escape_html }
 }
 # rfc3339 date when feed was last updated.
 fupdated = `{ndate -a `{date `{mtime `{ls $blagh_root$blagh_dirs/[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9]/[0-9] | tail -1} | awk '{print $1}'}}}
@@ -42,9 +43,9 @@ fupdated = `{ndate -a `{date `{mtime `{ls $blagh_root$blagh_dirs/[0-9][0-9][0-9]
 % # <link rel="replies" href="2899.atom" thr:count="0"/>
         <author><name><![CDATA[%($by%)]]></name></author>
 
-        <content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
-            <![CDATA[%($summary%)]]>
-        </div></content>
+        <content type="html">
+            %($summary%)
+        </content>
 
 % # rfc3339 date when entry was last updated.
 % eupdated=`{ndate -a `{date `{mtime $f | awk '{print $1}'}}}
