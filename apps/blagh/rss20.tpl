@@ -25,10 +25,10 @@ fn statpost {
 	# rfc2822 last time channel content changed.
 	lbd=`{ndate -m `{date `{mtime `{ls $blagh_root$blagh_dirs/[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9]/[0-9] | tail -1} | awk '{print $1}'}}}
 	echo '<lastBuildDate>'$"lbd'</lastBuildDate>'
-	# rfc2822 publication date for content in the channel.
-	pubdate=`{ndate -m}
         for(f in `{get_post_list $blagh_root$blagh_dirs}){
             statpost $f
+	    # rfc2822 publication date for this post.
+	    pubdate=`{ndate -m `{date `{mtime $f | awk '{print $1}'}}}
 %}
         <item>
             <title><![CDATA[%($title%)]]></title>
