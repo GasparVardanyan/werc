@@ -65,7 +65,7 @@ the werc mailing list. To join, send a message with a body consisting only of th
 
 To track commit messages, you can join the werc-commits mailing list. To join, send a message with a body consisting only of the word _subscribe_ to werc-commits-owner@cat-v.org.
 
-On irc, join [#cat-v](irc://irc.freenode.org/cat-v) on irc.freenode.org
+On irc, join [#cat-v](irc://irc.oftc.org/cat-v) on irc.oftc.org
 
 
 License
