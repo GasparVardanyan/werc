@@ -3,7 +3,7 @@
 fn do_error{
 	echo 'HTTP/1.1 '^$1^$cr
 	emit_extra_headers
-	echo 'Content-type: text/html'^$cr
+	echo 'Content-type: text/html; charset=utf-8'^$cr
 	echo $cr
 	echo '<html>
 <head>
@@ -17,6 +17,11 @@ fn do_error{
 	</body>
 	</html>
 	'
+}
+
+fn 400{
+	do_error '400 Bad Request' \
+	'The request was invalid.'
 }
 
 fn 401{
